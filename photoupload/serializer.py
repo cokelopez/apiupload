@@ -26,6 +26,7 @@ class PostImageUpdateSerializer(serializers.Serializer):
         image_file = validated_data.get('file')
 
         if session_name and isinstance(session_name, str):
+            # what does the '_' does here?
             session, _ = PostSession.objects.get_or_create(name=session_name, )
         else:
             session = None
@@ -79,6 +80,7 @@ class PostUploadSerializer(serializers.Serializer):
                 post_image_serializer.is_valid(raise_exception=True, )
                 post_image = post_image_serializer.save()
                 post_image_instances.append(post_image)
+                # I don´t know exactly what to use in the exception
             except:
                 pass
 
