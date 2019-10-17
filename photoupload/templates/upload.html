@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load rest_framework %}
+
+
+{% block content %}
+
+<div class="container">
+    <div class="mt-2 pt-0">
+        <div class="bg-light border">
+
+            <form class="form-group pt-2 pl-1" method="POST" enctype="multipart/form-data">
+
+                {% csrf_token %}
+
+
+                <button type="submit">Upload</button>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}
